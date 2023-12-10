@@ -1,0 +1,223 @@
+
+$cor-letras-h1: #D42026
+
+// Use a variável para estilizar o seletor H1
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    font-family: 'Roboto', sans-serif
+
+.container-menu 
+    display: flex
+    justify-content: space-between
+    padding-left: 42px
+    padding-right: 42px
+    padding-top: 20px
+    font-family: 'Roboto', sans-serif
+    margin-bottom: 34px
+
+.container-menu h1
+    color: $cor-letras-h1
+    font-weight: 900
+
+.border-bus
+    border-bottom: 5px solid $cor-letras-h1
+
+.text-thin
+    font-weight: 400
+
+.text-name-cadidato
+    font-weight: 400 !important
+
+.container-input-busca
+    display: flex
+    flex-direction: column
+    // background-color: red
+    padding-left: 42px
+    margin-bottom: 34px
+
+.container-input-busca label
+    color: $cor-letras-h1
+    font-weight: 500
+
+.container-input-busca input
+    height: 31px
+    width: 400px
+    border: 1px solid #A5A5A5
+    border-radius: 5px
+
+.container-table
+    width: 100%
+    height: 60vh
+    // padding-left: 33px
+    // padding-right: 27px
+    padding-left: 42px
+    padding-right: 42px
+    // background-color: blue
+    overflow-y: auto
+
+.table
+    width: 100%
+    height: 100%
+    border-collapse: collapse
+    // border-collapse: separate
+    // border-spacing: 10px 0px
+
+.table thead 
+    background-color: yellow
+    height: 37px
+
+.table thead tr th
+    padding-left: 15px
+    border-spacing: 10px
+    color: white
+    background-color: $cor-letras-h1
+    font-weight: 400
+    text-align: left
+
+
+.table tbody tr
+    height: 112px
+    border-bottom: 2px solid #d4202636
+    cursor: pointer
+    transition: .5s all ease
+
+.table tbody tr:hover
+    background-color: #d420261a
+
+.table tbody tr td
+    padding-left: 15px
+
+.border-1
+    border-right: 10px solid white
+
+.espaco-extra
+    padding-left: 20px !important
+
+.img-heroi
+    width: 58px
+    height: 58px
+    border-radius: 50%
+
+.td-img-nome
+    display: flex
+    align-items: center
+    height: 100%
+    gap: 25px
+
+.container-paginacao
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 18px
+    // background-color: pink
+    height: 14vh
+
+
+.container-paginacao a
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 50%
+    text-decoration: none
+    border: 2px solid $cor-letras-h1
+    color: $cor-letras-h1
+    font-weight: 500
+    width: 32px
+    height: 32px
+    transition: .5s all ease
+
+.container-paginacao a:hover
+    background-color: $cor-letras-h1
+    color: white
+
+.container-paginacao a.active
+    background-color: $cor-letras-h1
+    color: white
+
+
+.container-img-nome-detalhe
+    display: flex
+    align-items: center
+    padding-left: 42px
+    gap: 15px
+    padding-right: 42px
+    margin-bottom: 30px
+    // background-color: red
+
+.container-img-nome-detalhe img
+    width: 100px
+    height: 100px
+    border-radius: 50%
+
+.container-img-nome-detalhe span
+    font-weight: 700
+    font-size: 35px
+
+.container-detalhes
+    display: flex
+    width: 100%
+    height: 65vh
+    padding-left: 42px
+    padding-right: 42px
+    // background-color: red
+
+.esquerda
+    display: flex
+    width: 100%
+    gap: 20px
+    height: 100%
+    // background-color: green
+
+.container-serie
+    width: 47%
+    height: 100%
+    border-radius: 10px
+    border: 2px solid $cor-letras-h1
+    // padding: 15px
+    // background-color: blue
+
+.container-serie h1
+    font-size: 28px
+    padding-left: 15px
+    padding-top: 15px
+    height: 70px
+    background-color: $cor-letras-h1
+    color: white
+
+.container-list-series
+    // background-color: green
+    width: 100%
+    height: 80%
+    padding-top: 15px
+    overflow-y: auto
+
+.container-list-series h2
+    display: flex
+    align-items: center
+    padding-left: 15px
+    font-size: 17px
+    cursor: pointer
+    margin-bottom: 8px
+    height: 45px
+    transition: .4s all ease
+
+.container-list-series h2:hover
+    background-color: #d420261a
+
+.container-evento
+    width: 47%
+    height: 100%
+    border-radius: 10px
+    border: 2px solid $cor-letras-h1
+    // background-color: pink
+
+.direita
+    display: flex
+    gap: 20px
+    width: 50%
+    height: 100%
+    // background-color: yellow
