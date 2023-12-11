@@ -196,31 +196,6 @@ body {
     padding-right: 0px;
     height: 70vh;
   }
-  .container-img-nome-detalhe {
-    margin-top: 35px;
-  }
-  .container-img-nome-detalhe img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-  }
-  .container-img-nome-detalhe span {
-    font-size: 25px;
-  }
-  .esquerda {
-    display: flex;
-    flex-direction: column;
-  }
-  .container-serie {
-    width: 100%;
-  }
-  .container-serie h1 {
-    font-size: 20px;
-    height: 50px;
-  }
-  .container-list-series {
-    height: 88%;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
