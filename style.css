@@ -94,7 +94,7 @@ body {
   background-color: rgba(212, 32, 38, 0.1019607843);
 }
 
-.table tbody tr td {
+.table tbody tr td:first-child {
   padding-left: 15px;
 }
 
@@ -107,7 +107,7 @@ body {
 }
 
 .espaco-extra {
-  padding-left: 20px !important;
+  padding-left: 20px;
 }
 
 .img-heroi {
