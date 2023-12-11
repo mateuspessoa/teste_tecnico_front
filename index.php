@@ -32,22 +32,22 @@
             <thead>
                 <tr>
                     <th class="border-1">Personagem</th>
-                    <th class="border-1">Séries</th>
-                    <th>Eventos</th>
+                    <th class="border-2">Séries</th>
+                    <th class="apenas-mobile">Eventos</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                     function api() {
 
-                        $publicKey = '8f0030ef39410d0b6588ca3480857350';
-                        $privateKey = '8919fc6d26a53ac7f4b88e9a36c1dc43b6db27b5';
+                        $publicKey = '';
+                        $privateKey = '';
 
                         $timestamp = time();
                         $hash = md5($timestamp . $privateKey . $publicKey);
 
                         // Monta a URL da API com os parâmetros necessários
-                        $apiUrl = "https://gateway.marvel.com:443/v1/public/characters?ts=$timestamp&limit=25&apikey=$publicKey&hash=$hash";
+                        $apiUrl = "https://gateway.marvel.com:443/v1/public/characters?ts=$timestamp&limit=18&apikey=$publicKey&hash=$hash";
 
                         // Faz a requisição à API
                         $response = file_get_contents($apiUrl);

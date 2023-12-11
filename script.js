@@ -1,72 +1,68 @@
-// Variáveis para controlar a página atual e o número de itens por página
 var currentPage = 1;
-var itemsPerPage = 3;
+var itemsPerPage = determineItemsPerPage();
 
-// Função para exibir os itens da página atual
+window.addEventListener('resize', function () {
+    itemsPerPage = determineItemsPerPage();
+    displayItems();
+});
+
+function determineItemsPerPage() {
+    return window.innerWidth <= 450 ? 4 : 3;
+}
+
 function displayItems() {
-   var table = document.getElementById("characterTable");
-   var rows = table.getElementsByTagName("tr");
+    var table = document.getElementById("characterTable");
+    var rows = table.getElementsByTagName("tr");
 
-   // Calcula os índices de início e fim com base na página atual e itens por página
-   var startIndex = (currentPage - 1) * itemsPerPage + 1;
-   var endIndex = startIndex + itemsPerPage;
+    var startIndex = (currentPage - 1) * itemsPerPage + 1;
+    var endIndex = startIndex + itemsPerPage;
 
-   // Oculta todas as linhas, exceto o cabeçalho
-   for (var i = 1; i < rows.length; i++) {
-      rows[i].style.display = "none";
-   }
+    for (var i = 1; i < rows.length; i++) {
+        rows[i].style.display = "none";
+    }
 
-   // Exibe apenas as linhas da página atual
-   for (var i = startIndex; i < endIndex && i < rows.length; i++) {
-      rows[i].style.display = "";
-   }
+    for (var i = startIndex; i < endIndex && i < rows.length; i++) {
+        rows[i].style.display = "";
+    }
 
-   // Atualiza os links de numeração
-   updatePaginationLinks();
+    updatePaginationLinks();
 }
 
-// Função para atualizar os links de numeração
 function updatePaginationLinks() {
-   var table = document.getElementById("characterTable");
-   var rows = table.getElementsByTagName("tr");
-   var totalPages = Math.ceil((rows.length - 1) / itemsPerPage);
+    var table = document.getElementById("characterTable");
+    var rows = table.getElementsByTagName("tr");
+    var totalPages = Math.ceil((rows.length - 1) / itemsPerPage);
 
-   var paginationContainer = document.querySelector(".container-paginacao");
-   paginationContainer.innerHTML = "";
+    var paginationContainer = document.querySelector(".container-paginacao");
+    paginationContainer.innerHTML = "";
 
-   // Adiciona links de numeração
-   for (var i = 1; i <= totalPages; i++) {
-      var pageLink = document.createElement("a");
-      pageLink.href = "#";
-      pageLink.textContent = i;
+    for (var i = 1; i <= totalPages; i++) {
+        var pageLink = document.createElement("a");
+        pageLink.href = "#";
+        pageLink.textContent = i;
 
-      // Adiciona a classe "active" apenas ao link 1 inicialmente
-      if (i === 1) {
-         pageLink.classList.add("active");
-      }
+        if (i === currentPage) {
+            pageLink.classList.add("active");
+        }
 
-      // Adiciona um evento de clique para navegar para a página correspondente
-      pageLink.addEventListener("click", function (event) {
-         event.preventDefault();
+        pageLink.addEventListener("click", function (event) {
+            event.preventDefault();
 
-         // Remove a classe "active" de todos os links
-         var links = paginationContainer.querySelectorAll("a");
-         links.forEach(function (link) {
-            link.classList.remove("active");
-         });
+            var links = paginationContainer.querySelectorAll("a");
+            links.forEach(function (link) {
+                link.classList.remove("active");
+            });
 
-         // Adiciona a classe "active" apenas ao link clicado
-         this.classList.add("active");
+            this.classList.add("active");
 
-         currentPage = parseInt(this.textContent);
-         displayItems();
-      });
+            currentPage = parseInt(this.textContent);
+            displayItems();
+        });
 
-      paginationContainer.appendChild(pageLink);
-   }
+        paginationContainer.appendChild(pageLink);
+    }
 }
 
-// Chamada inicial para carregar a página com o link 1 ativo
 updatePaginationLinks();
 
 
