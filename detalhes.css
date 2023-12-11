@@ -18,7 +18,7 @@ body {
   margin-bottom: 34px;
 }
 
-.container-menu h1 {
+.container-menu h1:first-child {
   color: #D42026;
   font-weight: 900;
 }
@@ -32,6 +32,7 @@ body {
 }
 
 .text-name-cadidato {
+  color: #D42026;
   font-weight: 400 !important;
 }
 

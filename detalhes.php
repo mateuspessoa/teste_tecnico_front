@@ -26,8 +26,8 @@
     <?php
             function api() {
                 $characterId = isset($_GET['id']) ? $_GET['id'] : null;
-                $publicKey = '8f0030ef39410d0b6588ca3480857350';
-                $privateKey = '8919fc6d26a53ac7f4b88e9a36c1dc43b6db27b5';
+                $publicKey = '';
+                $privateKey = '';
 
                 $timestamp = time();
                 $hash = md5($timestamp . $privateKey . $publicKey);
